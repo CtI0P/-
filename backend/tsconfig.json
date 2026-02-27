@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "commonjs",
+        "lib": ["ES2020"],
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true, // 严格模式，禁止隐式any类型出现
+        "esModuleInterop": true, // 用于处理模块导入和导出，是否支持使用import d from 'cjs' 的方式引入CommonJS包
+        "skipLibCheck": true, // 用于控制是否跳过对声明文件(.d.ts文件)的类型检查  可以提高编译速度
+        "forceConsistentCasingInFileNames": true, // 确保代码中引用的模块文件名与文件系统中的文件名大小写一致
+        "resolveJsonModule": true, // 可以正常导入JSON文件，并且根据JSON文件的静态结构生成相应的类型
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"],
+}

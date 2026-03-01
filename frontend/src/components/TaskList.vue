@@ -303,14 +303,14 @@ const submitTaskForm = async () => {
   
     try {
         await taskFormRef.value.validate();
-        formLoading.value = true;
+            formLoading.value = true;
         
         if (editingTask.value) {
-        await taskStore.updateTask(editingTask.value.id, taskForm.value);
-        ElMessage.success('任务更新成功');
+            await taskStore.updateTask(editingTask.value.id, taskForm.value);
+            ElMessage.success('任务更新成功');
         } else {
-        await taskStore.createTask(taskForm.value);
-        ElMessage.success('任务创建成功');
+            await taskStore.createTask(taskForm.value);
+            ElMessage.success('任务创建成功');
         }
         
         showCreateDialog.value = false;
@@ -327,9 +327,9 @@ const submitTaskForm = async () => {
 const deleteTask = async (id: number) => {
     try {
         await ElMessageBox.confirm('确定要删除这个任务吗？', '警告', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning',
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning',
         });
         
         await taskStore.deleteTask(id);
